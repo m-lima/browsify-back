@@ -1,12 +1,12 @@
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
+# Build
+browsify
+browsify.exe
 
 # Test binary, build with `go test -c`
 *.test
 
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
+# Environment specific files
+browsify.conf
+start.sh
+config.json
+users.json
