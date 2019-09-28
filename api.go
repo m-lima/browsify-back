@@ -25,7 +25,7 @@ var (
 )
 
 func pathAllowed(user *User, file string, isDir bool) bool {
-	if user.Permissions.Admin {
+	if user.Permissions.Admin || file == "/" {
 		return true
 	}
 
