@@ -1,5 +1,5 @@
 docker build -t browsify .
-docker stop skull
+docker stop browsify
 docker rm browsify
 docker create \
   --name browsify \
