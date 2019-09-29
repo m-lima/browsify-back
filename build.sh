@@ -4,4 +4,5 @@ docker rm browsify
 docker create \
   --name browsify \
   --volume /home/fly/www:/data \
+  --net fly \
   browsify
