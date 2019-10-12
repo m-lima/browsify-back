@@ -34,7 +34,7 @@ func transfer(conn net.Conn, message string) error {
 	if bytes < 1 {
 		return fmt.Errorf("Got an empty response from SMTP server")
 	}
-	smtpLogStd.Print("< ", strings.ReplaceAll(string(buffer), "\x0d\x0a", "\n"))
+	smtpLogStd.Print("< ", strings.ReplaceAll(string(buffer), "\x0d\x0a", ""))
 
 	return nil
 }
