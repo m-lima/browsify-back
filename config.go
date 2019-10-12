@@ -23,6 +23,13 @@ type Server struct {
 	Address string `json:"address"`
 }
 
+type Smtp struct {
+	Server   string `json:"server"`
+	Identity string `json:"identity"`
+	From     string `json:"from"`
+	To       string `json:"to"`
+}
+
 type System struct {
 	Root string `json:"root"`
 }
@@ -31,6 +38,7 @@ type Config struct {
 	Cache  Cache  `json:"cache"`
 	Paths  Paths  `json:"paths"`
 	Server Server `json:"server"`
+	Smtp   Smtp   `json:"smtp"`
 	System System `json:"system"`
 }
 
@@ -47,6 +55,12 @@ var (
 		},
 		Server: Server{
 			Address: ":80",
+		},
+		Smtp: Smtp{
+			Server:   "localhost:25",
+			Identity: "sender.server.com",
+			From:     "sender@server.com",
+			To:       "recipient@server.com",
 		},
 		System: System{
 			Root: "/data",

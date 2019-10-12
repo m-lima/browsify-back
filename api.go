@@ -80,7 +80,10 @@ func apiHandler(response http.ResponseWriter, request *http.Request) {
 	// Map request to filesystem path
 	urlPath := request.URL.Path
 	systemPath := config.System.Root + urlPath
+
+	// Log
 	apiLogStd.Println(user.Email, "is requesting", urlPath)
+	PushAccessNotification(user, urlPath)
 
 	// Not found
 	if _, err := os.Stat(systemPath); err != nil {

@@ -23,6 +23,7 @@ type UserPermissions struct {
 	CanShowHidden    bool     `json:"canShowHidden"`
 	CanShowProtected bool     `json:"canShowProtected"`
 	Paths            []string `json:"paths"`
+	IgnoreAccess     bool     `json:"ignoreAccess"`
 }
 
 const (
@@ -76,6 +77,7 @@ func getUserPermissions(user *User) error {
 	user.Permissions.CanShowHidden = allowedUser.CanShowHidden
 	user.Permissions.CanShowProtected = allowedUser.CanShowProtected
 	user.Permissions.Paths = allowedUser.Paths
+	user.Permissions.IgnoreAccess = allowedUser.IgnoreAccess
 
 	return nil
 }
