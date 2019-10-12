@@ -1,6 +1,8 @@
 # Build
 browsify
 browsify.exe
+browsify-back
+browsify-back.exe
 
 # Test binary, build with `go test -c`
 *.test
