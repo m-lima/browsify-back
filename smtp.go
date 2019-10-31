@@ -77,7 +77,7 @@ func Send(user *User, payload string) {
 		return
 	}
 
-	err = transfer(conn, fmt.Sprintf("From: %s\x0d\x0aTo: %s\x0d\x0aSubject: Access log for %s\x0d\x0a\x0d\x0a%s\x0d\x0a.", config.Smtp.From, config.Smtp.To, user.Email, payload))
+	err = transfer(conn, fmt.Sprintf("From: \"%s\" <%s>\x0d\x0aTo: %s\x0d\x0aSubject: Access log for %s\x0d\x0a\x0d\x0a%s\x0d\x0a.", config.Smtp.From, config.Smtp.To, user.Email, payload))
 	if err != nil {
 		smtpLogErr.Println(err)
 		return

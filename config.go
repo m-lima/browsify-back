@@ -28,6 +28,7 @@ type Smtp struct {
 	Identity string `json:"identity"`
 	From     string `json:"from"`
 	To       string `json:"to"`
+	Name     string `json:"name"`
 }
 
 type System struct {
@@ -61,6 +62,7 @@ var (
 			Identity: "sender.server.com",
 			From:     "sender@server.com",
 			To:       "recipient@server.com",
+			Name:     "Sender",
 		},
 		System: System{
 			Root: "/data",
