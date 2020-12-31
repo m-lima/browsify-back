@@ -13,7 +13,7 @@ COPY *.go /go/src/browsify/
 RUN go get && go install
 
 ## Main
-FROM golang
+FROM debian:stable-slim
 
 WORKDIR /opt/browsify
 
