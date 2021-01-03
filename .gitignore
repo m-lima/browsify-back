@@ -8,7 +8,5 @@ browsify-back.exe
 *.test
 
 # Environment specific files
-browsify.conf
-start.sh
 config.json
 users.json
